@@ -33,7 +33,7 @@ The application uses PostgreSQL for data persistence. When running with Docker, 
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone <coffee-machine>
 cd coffee-machine
 ```
 
