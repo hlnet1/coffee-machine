@@ -36,7 +36,6 @@ The application uses PostgreSQL for data persistence. When running with Docker, 
 git clone https://github.com/hlnet1/coffee-machine.git
 cd coffee-machine
 ```
-
 2. Build the application:
 ```bash
 mvn clean install
