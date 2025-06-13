@@ -33,7 +33,7 @@ The application uses PostgreSQL for data persistence. When running with Docker, 
 
 1. Clone the repository:
 ```bash
-git clone <coffee-machine>
+git clone https://github.com/hlnet1/coffee-machine.git
 cd coffee-machine
 ```
 
@@ -49,15 +49,6 @@ docker-compose up
 ```bash
 mvn spring-boot:run
 ```
-The application will start on `http://localhost:8080`
-
-## Testing
-
-Run the tests using Maven:
-```bash
-mvn test
-```
-
 ### Docker Deployment
 
 1. Build and start the containers:
@@ -72,4 +63,11 @@ docker-compose up --build
 3. Stop the containers:
 ```bash
 docker-compose down
+```
+
+## Testing
+
+Run the tests using Maven:
+```bash
+mvn test
 ```
