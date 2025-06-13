@@ -49,6 +49,13 @@ docker-compose up
 ```bash
 mvn spring-boot:run
 ```
+## Testing
+
+Run the tests using Maven:
+```bash
+mvn test
+```
+
 ### Docker Deployment
 
 1. Build and start the containers:
@@ -56,18 +63,12 @@ mvn spring-boot:run
 docker-compose up --build
 ```
 
-2. Access the application:
+
+### Access the application
+
 - Application: http://localhost:8080
 - Swagger UI: http://localhost:8080/swagger-ui.html
 
-3. Stop the containers:
-```bash
-docker-compose down
-```
 
-## Testing
 
-Run the tests using Maven:
-```bash
-mvn test
-```
+
