@@ -11,6 +11,8 @@ public interface VendingService {
     Product updateProduct(Long id, Product product);
     void removeProduct(Long id);
     void removeAllProducts();
+    Map<CoinEnum, Integer> buyProduct(Long productId);
+    void insertCoin(CoinEnum coin);
     List<Product> getAllProducts();
     List<CoinEnum> returnCoins();
     int getTotalInsertedSum();
