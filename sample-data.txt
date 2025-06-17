@@ -1,0 +1,35 @@
+{
+  "productName": "Cola",
+  "productPrice": 170,
+  "quantity": 5
+},
+{
+  "productName": "Mocca",
+  "productPrice": 160,
+  "quantity": 10
+},
+{
+  "productName": "Tea",
+  "productPrice": 110,
+  "quantity": 4
+},
+{
+  "productName": "Water",
+  "productPrice": 50,
+  "quantity": 5
+},
+{
+  "productName": "Cappuccino",
+  "productPrice": 250,
+  "quantity": 9
+},
+{
+  "productName": "Coffee",
+  "productPrice": 235,
+  "quantity": 8
+},
+{
+  "productName": "Hot Chocolte",
+  "productPrice": 200,
+  "quantity": 7
+}
