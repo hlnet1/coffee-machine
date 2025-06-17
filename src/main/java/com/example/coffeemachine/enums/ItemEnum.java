@@ -9,7 +9,7 @@ import java.util.Arrays;
 @Getter
 public enum ItemEnum {
 
-    MOCCA("Mocca", 165),
+    MOCCA("Mocca", 160),
     TEA("Tea", 110),
     WATER("Water", 50),
     CAPPUCCINO("Cappuccino", 250),
