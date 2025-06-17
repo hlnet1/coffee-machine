@@ -21,9 +21,15 @@ public class VendingController {
     private final VendingService vendingService;
     private final MachineState machineState;
 
-    @PostMapping("/products")
+    @PostMapping("/add-product")
     public ResponseEntity<Product> addProduct(@Valid @RequestBody Product product) {
         return ResponseEntity.ok(vendingService.addNewProduct(product));
+    }
+
+    @PostMapping("/add-product-list")
+    public ResponseEntity<Void>  addProducts(@Valid @RequestBody List<Product> productList) {
+        vendingService.addProducts(productList);
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping("/products/{id}")
@@ -40,6 +46,12 @@ public class VendingController {
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts() {
         return ResponseEntity.ok(vendingService.getAllProducts());
+    }
+
+    @DeleteMapping("/remove-all-products")
+    public ResponseEntity<Void>  removeAllProducts () {
+        vendingService.removeAllProducts();
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/insert-coins")
@@ -72,6 +84,4 @@ public class VendingController {
     public ResponseEntity<Map<CoinEnum, Integer>> getAvailableChange() {
         return ResponseEntity.ok(machineState.getAvailableChange());
     }
-
-
 }
