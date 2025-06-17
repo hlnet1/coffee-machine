@@ -58,7 +58,7 @@ public class CoffeeMachineIntegrationTest {
     @Test
     void completeVendingFlow_ShouldWorkSuccessfully() throws Exception {
 
-        MvcResult addResult = mockMvc.perform(post("/api/vending/products")
+        MvcResult addResult = mockMvc.perform(post("/api/vending/add-product")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(testProduct)))
                 .andExpect(status().isOk())
@@ -157,7 +157,7 @@ public class CoffeeMachineIntegrationTest {
     @Test
     void buyProduct_ShouldFail_WhenInsufficientAmount() throws Exception {
 
-        MvcResult addResult = mockMvc.perform(post("/api/vending/products")
+        MvcResult addResult = mockMvc.perform(post("/api/vending/add-product")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(testProduct)))
                 .andExpect(status().isOk())
@@ -196,3 +196,4 @@ public class CoffeeMachineIntegrationTest {
         }
     }
 }
+
