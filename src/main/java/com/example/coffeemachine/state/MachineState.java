@@ -2,7 +2,7 @@ package com.example.coffeemachine.state;
 
 import com.example.coffeemachine.entity.Product;
 import com.example.coffeemachine.enums.CoinEnum;
-import lombok.Data;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Data
+@Getter
 @Component
 @Slf4j
 public class MachineState {
@@ -54,12 +54,6 @@ public class MachineState {
 
     public void setAvailableChange(Map<CoinEnum, Integer> change) {
         this.availableChange = new EnumMap<>(change);
-    }
-
-    public double getCurrentBalance() {
-        return availableChange.entrySet().stream()
-                .mapToInt(e -> e.getKey().getDenomination() * e.getValue())
-                .sum() / 100.0;
     }
 
     public void resetChange() {
