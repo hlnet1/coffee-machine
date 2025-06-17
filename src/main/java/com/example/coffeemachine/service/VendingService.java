@@ -7,10 +7,10 @@ import java.util.Map;
 
 public interface VendingService {
     Product addNewProduct(Product product);
+    void addProducts(List<Product> product);
     Product updateProduct(Long id, Product product);
     void removeProduct(Long id);
-    Map<CoinEnum, Integer> buyProduct(Long productId);
-    void insertCoin(CoinEnum coin);
+    void removeAllProducts();
     List<Product> getAllProducts();
     List<CoinEnum> returnCoins();
     int getTotalInsertedSum();
