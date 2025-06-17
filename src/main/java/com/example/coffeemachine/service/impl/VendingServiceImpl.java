@@ -39,6 +39,12 @@ public class VendingServiceImpl implements VendingService {
 
     @Override
     @Transactional
+    public void addProducts(List<Product> product) {
+        product.forEach(this::addNewProduct);
+    }
+
+    @Override
+    @Transactional
     public Product updateProduct(Long id, Product product) {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product with ID " + id + " not found"));
@@ -64,8 +70,16 @@ public class VendingServiceImpl implements VendingService {
     @Transactional
     public void removeProduct(Long id) {
         Product product = productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product with ID " + id + " not found"));
-        machineState.getInventory().remove(product.getProductName());
+        String productName = product.getProductName();
+        machineState.getInventory().remove(productName);
+        log.info("Product {} has been removed. ", productName);
         productRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional
+    public void removeAllProducts() {
+        this.getAllProducts().forEach(p->removeProduct(p.getId()));
     }
 
     @Override
