@@ -41,11 +41,11 @@ cd coffee-machine
 ```bash
 mvn clean install
 ```
-2. Run the database:
+3. Run the database:
 ```bash
-docker-compose up
+docker-compose up postgres
 ```
-3. Run the application:
+4. Run the application:
 ```bash
 mvn spring-boot:run
 ```
